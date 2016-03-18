@@ -26,6 +26,8 @@ makeRowsAndColumns();
 
 function colorChange(){
     var el = this;
+    var i = this.cellIndex;
+    
     if(el.classList.contains("empty")){
         el.classList.remove("empty");
         el.classList.add("filled");  
@@ -56,11 +58,27 @@ function colorChange(){
         }
     }
     
-    /*if(){
-        
+    if(el.parentNode.previousElementSibling != null && el.parentNode.previousElementSibling.children[i].classList.contains("empty")){
+        if(el.parentNode.previousElementSibling != null){
+            el.parentNode.previousElementSibling.children[i].classList.remove("empty");
+            el.parentNode.previousElementSibling.children[i].classList.add("filled");
+        }
+    } else{
+        if(el.parentNode.previousElementSibling != null){
+            el.parentNode.previousElementSibling.children[i].classList.remove("filled");
+            el.parentNode.previousElementSibling.children[i].classList.add("empty");
+        }
     }
     
-    if(){
-        
-    }*/
+    if(el.parentNode.nextElementSibling != null && el.parentNode.nextElementSibling.children[i].classList.contains("empty")){
+        if(el.parentNode.nextElementSibling != null){
+            el.parentNode.nextElementSibling.children[i].classList.remove("empty");
+            el.parentNode.nextElementSibling.children[i].classList.add("filled");
+        }
+    } else{
+        if(el.parentNode.nextElementSibling != null){
+            el.parentNode.nextElementSibling.children[i].classList.remove("filled");
+            el.parentNode.nextElementSibling.children[i].classList.add("empty");
+        }
+    }
 }
