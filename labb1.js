@@ -51,7 +51,7 @@ function game(){
             el.nextElementSibling.classList.add("lights-on");
         }
     }
-    /*
+    
     if(el.parentNode.previousElementSibling != null && el.parentNode.previousElementSibling.children[i].classList.contains("lights-on")){
         if(el.parentNode.previousElementSibling != null){
             el.parentNode.previousElementSibling.children[i].classList.remove("lights-on");
@@ -75,7 +75,6 @@ function game(){
             el.parentNode.nextElementSibling.children[i].classList.add("lights-on");
         }
     }
-    */
     
     result();
 }
