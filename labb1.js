@@ -2,7 +2,7 @@
 
 var table = document.getElementById("myTable");
 
-function makeRowsAndColumns(){
+function gameBoard(){
     for(var i = 0; i < 5; i++){
         var tr = table.insertRow(i);
         for(var j = 0; j < 5; j++){
@@ -10,21 +10,15 @@ function makeRowsAndColumns(){
         }
     }
     
-    for(var i = 0; i < 5; i++){
-        for(var j = 0; j < 5; j++){
-            table.rows[i].cells[j].id = "y" + i + "x" + j;
-        }
-    }
-    
     var arr = document.querySelectorAll("td");
     for(var i = 0; i < arr.length; i++){
-        arr[i].addEventListener("click", colorChange);
+        arr[i].addEventListener("click", game);
     }
 }
 
-makeRowsAndColumns();
+gameBoard();
 
-function colorChange(){
+function game(){
     var el = this;
     var i = this.cellIndex;
     
