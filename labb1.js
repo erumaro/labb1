@@ -51,7 +51,7 @@ function game(){
             el.nextElementSibling.classList.add("lights-on");
         }
     }
-    
+    /*
     if(el.parentNode.previousElementSibling != null && el.parentNode.previousElementSibling.children[i].classList.contains("lights-on")){
         if(el.parentNode.previousElementSibling != null){
             el.parentNode.previousElementSibling.children[i].classList.remove("lights-on");
@@ -73,6 +73,20 @@ function game(){
         if(el.parentNode.nextElementSibling != null){
             el.parentNode.nextElementSibling.children[i].classList.remove("lights-off");
             el.parentNode.nextElementSibling.children[i].classList.add("lights-on");
+        }
+    }
+    */
+    
+    result();
+}
+
+function result(){
+    if(document.querySelectorAll(".lights-on").length === 0){
+        alert("Grattis! Du vann spelet!");
+        var cellClass = document.querySelectorAll("td");
+        for(var i = 0; i < cellClass.length; i++){
+            cellClass[i].classList.remove("lights-off");
+            cellClass[i].classList.add("lights-on");
         }
     }
 }
