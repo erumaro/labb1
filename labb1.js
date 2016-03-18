@@ -6,7 +6,7 @@ function gameBoard(){
     for(var i = 0; i < 5; i++){
         var tr = table.insertRow(i);
         for(var j = 0; j < 5; j++){
-            var td = tr.insertCell(j).classList.add("empty");
+            var td = tr.insertCell(j).classList.add("lights-on");
         }
     }
     
@@ -22,57 +22,57 @@ function game(){
     var el = this;
     var i = this.cellIndex;
     
-    if(el.classList.contains("empty")){
-        el.classList.remove("empty");
-        el.classList.add("filled");  
+    if(el.classList.contains("lights-on")){
+        el.classList.remove("lights-on");
+        el.classList.add("lights-off");  
     } else{
-        el.classList.remove("filled");
-        el.classList.add("empty");  
+        el.classList.remove("lights-off");
+        el.classList.add("lights-on");  
     }
-    if(el.previousElementSibling != null && el.previousElementSibling.classList.contains("empty")){
+    if(el.previousElementSibling != null && el.previousElementSibling.classList.contains("lights-on")){
         if(el.previousElementSibling != null){
-            el.previousElementSibling.classList.remove("empty");
-            el.previousElementSibling.classList.add("filled");
+            el.previousElementSibling.classList.remove("lights-on");
+            el.previousElementSibling.classList.add("lights-off");
         }
     } else{
         if(el.previousElementSibling != null){
-            el.previousElementSibling.classList.remove("filled");
-            el.previousElementSibling.classList.add("empty");
+            el.previousElementSibling.classList.remove("lights-off");
+            el.previousElementSibling.classList.add("lights-on");
         }
     }
-    if(el.nextElementSibling != null && el.nextElementSibling.classList.contains("empty")){
+    if(el.nextElementSibling != null && el.nextElementSibling.classList.contains("lights-on")){
         if(el.nextElementSibling != null){
-            el.nextElementSibling.classList.remove("empty");
-            el.nextElementSibling.classList.add("filled");
+            el.nextElementSibling.classList.remove("lights-on");
+            el.nextElementSibling.classList.add("lights-off");
         }
     } else{
         if(el.nextElementSibling != null){
-            el.nextElementSibling.classList.remove("filled");
-            el.nextElementSibling.classList.add("empty");
+            el.nextElementSibling.classList.remove("lights-off");
+            el.nextElementSibling.classList.add("lights-on");
         }
     }
     
-    if(el.parentNode.previousElementSibling != null && el.parentNode.previousElementSibling.children[i].classList.contains("empty")){
+    if(el.parentNode.previousElementSibling != null && el.parentNode.previousElementSibling.children[i].classList.contains("lights-on")){
         if(el.parentNode.previousElementSibling != null){
-            el.parentNode.previousElementSibling.children[i].classList.remove("empty");
-            el.parentNode.previousElementSibling.children[i].classList.add("filled");
+            el.parentNode.previousElementSibling.children[i].classList.remove("lights-on");
+            el.parentNode.previousElementSibling.children[i].classList.add("lights-off");
         }
     } else{
         if(el.parentNode.previousElementSibling != null){
-            el.parentNode.previousElementSibling.children[i].classList.remove("filled");
-            el.parentNode.previousElementSibling.children[i].classList.add("empty");
+            el.parentNode.previousElementSibling.children[i].classList.remove("lights-off");
+            el.parentNode.previousElementSibling.children[i].classList.add("lights-on");
         }
     }
     
-    if(el.parentNode.nextElementSibling != null && el.parentNode.nextElementSibling.children[i].classList.contains("empty")){
+    if(el.parentNode.nextElementSibling != null && el.parentNode.nextElementSibling.children[i].classList.contains("lights-on")){
         if(el.parentNode.nextElementSibling != null){
-            el.parentNode.nextElementSibling.children[i].classList.remove("empty");
-            el.parentNode.nextElementSibling.children[i].classList.add("filled");
+            el.parentNode.nextElementSibling.children[i].classList.remove("lights-on");
+            el.parentNode.nextElementSibling.children[i].classList.add("lights-off");
         }
     } else{
         if(el.parentNode.nextElementSibling != null){
-            el.parentNode.nextElementSibling.children[i].classList.remove("filled");
-            el.parentNode.nextElementSibling.children[i].classList.add("empty");
+            el.parentNode.nextElementSibling.children[i].classList.remove("lights-off");
+            el.parentNode.nextElementSibling.children[i].classList.add("lights-on");
         }
     }
 }

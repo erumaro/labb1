@@ -1,3 +1,8 @@
+body{
+    background-color: #ebebeb;
+    color: black;
+}
+
 table {
     border-style: solid;
     border-width: 2px;
@@ -8,7 +13,7 @@ td {
     border-width: 2px;
     width: 50px;
     height: 50px;
-    border-color: #ebebeb;
+    border-color: black;
 }
 
 header{
@@ -21,10 +26,10 @@ main{
     justify-content: center;
 }
 
-.filled{
-    background-color: #ebebeb;
+.lights-off{
+    background-color: black;
 }
 
-.empty{
+.lights-on{
     background-color: white;
 }
